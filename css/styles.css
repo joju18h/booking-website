@@ -1,0 +1,330 @@
+/*=============================================
+=            1. RESET                          =
+=============================================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*=============================================
+=            2. BASE STYLES                    =
+=============================================*/
+body {
+  background-color: #E5EEC7;   /* pale green */
+  color: #252523;              /* charcoal text */
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #252523;
+  margin-bottom: 32px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+/*=============================================
+=            3. HEADER & NAVIGATION            =
+=============================================*/
+header {
+  position: sticky;
+  top: 0;
+  background: transparent;
+  /* top/bottom: 48px; right: 48px; left: 0 */
+  padding: 48px 48px 48px 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;      /* space between hamburger and icon */
+  margin-left: 16px; /* inset from left edge */
+}
+
+.nav-toggle {
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-icon {
+  width: 32px;
+  height: auto;
+  margin: 0;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;       /* space between nav-links and buttons */
+  margin-right: 16px; /* inset from right edge */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;       /* space between links */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #252523;
+  font-size: 18px;
+  padding: 8px 16px;
+  transition: background 0.2s;
+}
+
+.nav-links li.active a,
+.nav-links li a:hover {
+  background: #9DA478;
+  border-radius: 9999px;
+}
+
+/*=============================================
+=            4. HERO SECTION                   =
+=============================================*/
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #E5EEC7;
+}
+
+.branch-left {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 120px; /* adjust to match Figma exactly */
+}
+
+.branch-right {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 120px; /* adjust to match Figma exactly */
+}
+
+.hero-text {
+  position: absolute;
+  top: 30%;       /* adjust to match vertical placement */
+  left: 48px;     /* inset from left edge */
+  max-width: 40%; /* adjust so line-length matches design */
+}
+
+.hero-text h1 {
+  margin: 0;
+}
+
+.hero-text p {
+  margin-top: 16px;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 32px;
+  background-color: #B0AA75;
+  color: #FFFFFF;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  padding: 16px 48px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+/*=============================================
+=            HERO ILLUSTRATION FIX            =
+=============================================*/
+/* Enlarge and reposition the illustration */
+.hero-illustration {
+  position: absolute;
+  bottom: 16px;       /* inset from bottom edge */
+  right: 16px;        /* inset from right edge */
+  width: 900px;       /* increase to match your Figma scale */
+  height: auto;
+  max-width: none;    /* allow it to grow beyond previous cap */
+}
+
+
+/*=============================================
+=            5. SERVICES SECTION               =
+=============================================*/
+#services {
+  padding: 48px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.service-item {
+  background-color: #E5EEC7;
+  padding: 32px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.service-icon {
+  width: 48px;
+  margin-bottom: 16px;
+}
+
+/*=============================================
+=            6. TESTIMONIALS SECTION           =
+=============================================*/
+#testimonials {
+  background-color: #9DA478;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.testimonial-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0;
+}
+
+cite {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/*=============================================
+=            7. BOOKING & CONTACT FORMS        =
+=============================================*/
+#booking,
+#contact {
+  padding: 48px 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+
+button[type="submit"] {
+  background-color: #B0AA75;
+  color: #FFFFFF;
+  padding: 16px;
+  border: none;
+  border-radius: 9999px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/*=============================================
+=            8. FOOTER                        =
+=============================================*/
+footer {
+  text-align: center;
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/*=============================================
+=            9. RESPONSIVE BREAKPOINTS        =
+=============================================*/
+@media (max-width: 1024px) {
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .branch-left,
+  .branch-right {
+    display: none;
+  }
+
+  .hero-text {
+    position: static;
+    margin: 48px auto 0;
+    max-width: 90%;
+  }
+
+  .hero-illustration {
+    position: static;
+    display: block;
+    margin: 32px auto 0;
+    max-width: 60%;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 32px;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
