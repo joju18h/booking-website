@@ -13,21 +13,17 @@
 =            2. BASE STYLES                    =
 =============================================*/
 body {
-  background-color: #E5EEC7;   /* pale green */
-  color: #252523;              /* charcoal text */
+  background-color: #E5EEC7;
+  color: #252523;
   font-family: Georgia, serif;
   font-size: 18px;
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #252523;
-  margin-bottom: 32px;
-}
-
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
+  margin-bottom: 32px;
 }
 
 p {
@@ -42,57 +38,47 @@ header {
   position: sticky;
   top: 0;
   background: transparent;
-  /* top/bottom: 48px; right: 48px; left: 0 */
   padding: 48px 48px 48px 0;
   z-index: 100;
 }
-
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0;
 }
-
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 16px;      /* space between hamburger and icon */
-  margin-left: 16px; /* inset from left edge */
+  gap: 16px;
+  margin-left: 16px;
 }
-
 .nav-toggle {
   width: 40px;
   height: 40px;
   background: #FFFFFF;
   border: none;
   border-radius: 9999px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
-
 .nav-icon {
   width: 32px;
   height: auto;
-  margin: 0;
 }
-
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 32px;       /* space between nav-links and buttons */
-  margin-right: 16px; /* inset from right edge */
+  gap: 32px;
+  margin-right: 16px;
 }
-
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 32px;       /* space between links */
+  gap: 32px;
+  list-style: none;
 }
-
 .nav-links li a {
   text-decoration: none;
   color: #252523;
@@ -100,7 +86,6 @@ nav {
   padding: 8px 16px;
   transition: background 0.2s;
 }
-
 .nav-links li.active a,
 .nav-links li a:hover {
   background: #9DA478;
@@ -112,41 +97,37 @@ nav {
 =============================================*/
 #hero {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px 32px;
+  min-height: calc(100vh - 80px);
   background-color: #E5EEC7;
+  overflow: hidden;
 }
-
 .branch-left {
   position: absolute;
   top: 16px;
   left: 16px;
-  width: 120px; /* adjust to match Figma exactly */
+  width: 120px;
 }
-
 .branch-right {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 120px; /* adjust to match Figma exactly */
+  width: 120px;
 }
-
 .hero-text {
-  position: absolute;
-  top: 30%;       /* adjust to match vertical placement */
-  left: 48px;     /* inset from left edge */
-  max-width: 40%; /* adjust so line-length matches design */
+  flex: 1 1 300px;
+  max-width: 40%;
 }
-
-.hero-text h1 {
+.hero-text h1,
+.hero-text p {
   margin: 0;
 }
-
 .hero-text p {
   margin-top: 16px;
 }
-
 .btn-primary {
   display: inline-block;
   margin-top: 32px;
@@ -159,43 +140,33 @@ nav {
   border-radius: 9999px;
   cursor: pointer;
 }
-
-/*=============================================
-=            HERO ILLUSTRATION FIX            =
-=============================================*/
-/* Enlarge and reposition the illustration */
 .hero-illustration {
-  position: absolute;
-  bottom: 16px;       /* inset from bottom edge */
-  right: 16px;        /* inset from right edge */
-  width: 900px;       /* increase to match your Figma scale */
+  flex: 1 1 200px;
+  max-width: 400px;
+  width: 100%;
   height: auto;
-  max-width: none;    /* allow it to grow beyond previous cap */
 }
-
 
 /*=============================================
 =            5. SERVICES SECTION               =
 =============================================*/
 #services {
   padding: 48px 32px;
+  width: 90%;
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 32px;
 }
-
 .service-item {
   background-color: #E5EEC7;
   padding: 32px;
   border-radius: 4px;
   text-align: center;
 }
-
 .service-icon {
   width: 48px;
   margin-bottom: 16px;
@@ -209,26 +180,22 @@ nav {
   padding: 48px 32px;
   text-align: center;
 }
-
 .testimonial-item {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 32px;
 }
-
 .avatar {
   width: 64px;
   height: 64px;
   border-radius: 50%;
   object-fit: cover;
 }
-
 blockquote {
   font-style: italic;
   margin: 0;
 }
-
 cite {
   display: block;
   margin-top: 8px;
@@ -241,16 +208,15 @@ cite {
 #booking,
 #contact {
   padding: 48px 32px;
+  width: 90%;
   max-width: 600px;
   margin: 0 auto;
 }
-
 form {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-
 input,
 textarea {
   width: 100%;
@@ -260,7 +226,6 @@ textarea {
   font-family: Georgia, serif;
   font-size: 18px;
 }
-
 button[type="submit"] {
   background-color: #B0AA75;
   color: #FFFFFF;
@@ -283,48 +248,30 @@ footer {
 /*=============================================
 =            9. RESPONSIVE BREAKPOINTS        =
 =============================================*/
+/* Tablet */
 @media (max-width: 1024px) {
-  #hero {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-  }
+  header { padding: 32px 24px 32px 0; }
+  .nav-right { gap: 24px; margin-right: 16px; }
+  #hero { flex-direction: column; padding: 32px 24px; min-height: auto; }
+  .branch-left, .branch-right { display: none; }
+  .hero-text { max-width: 100%; margin-bottom: 32px; }
+  .hero-illustration { max-width: 300px; }
+}
 
-  .branch-left,
-  .branch-right {
-    display: none;
-  }
-
-  .hero-text {
-    position: static;
-    margin: 48px auto 0;
-    max-width: 90%;
-  }
-
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links { display: none; }
+  header { padding: 24px 16px 24px 0; }
+  #hero { padding: 24px 16px; }
+  .hero-text { text-align: center; }
   .hero-illustration {
-    position: static;
-    display: block;
     margin: 32px auto 0;
     max-width: 60%;
+    flex: none;
   }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 32px;
-    background-color: #FFFFFF;
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: flex;
+  #services, #testimonials, #booking, #contact {
+    padding: 32px 16px;
+    width: 100%;
   }
 }
